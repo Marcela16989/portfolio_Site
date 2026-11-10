@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><base href="https://d16ilfvy4mv02r.cloudfront.net/workspaces/Eoy6DMPdUsGb8i9kjdDV57sRAAUjt5IM/02de3989-945d-4c38-b089-3a770b2b3b74/files/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glow Beauty | Maquiagem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --rosa: #f4a7b9;
+      --rosa-escuro: #e07a95;
+      --nude: #f9efe8;
+      --marrom: #8b5e6b;
+      --branco: #fff;
+      --cinza: #666;
+      --shadow: 0 4px 20px rgba(180,100,120,0.12);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fdf6f0;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #fff0f3 0%, #fce4ec 100%);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 15px rgba(240,130,150,0.2);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--marrom);
+      letter-spacing: 1px;
+    }
+
+    .logo span { color: var(--rosa-escuro); }
+
+    nav a {
+      text-decoration: none;
+      color: var(--marrom);
+      font-weight: 500;
+      margin-left: 25px;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--rosa-escuro); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 40%, #f48fb1 100%);
+      padding: 80px 5% 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "✦ ✦ ✦";
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.4);
+      font-size: 1.2rem;
+      letter-spacing: 10px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--marrom);
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #9b5d6e;
+      max-width: 500px;
+      margin: 0 auto 30px;
+    }
+
+    .hero-btn {
+      background: var(--marrom);
+      color: white;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-block;
+      transition: all 0.3s;
+      box-shadow: 0 5px 20px rgba(139,94,107,0.4);
+    }
+
+    .hero-btn:hover {
+      background: var(--rosa-escuro);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(224,122,149,0.5);
+    }
+
+    .hero-emojis {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    /* CATEGORIAS */
+    .categorias {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 30px 5%;
+      flex-wrap: wrap;
+      background: white;
+    }
+
+    .cat-btn {
+      background: var(--nude);
+      border: 2px solid var(--rosa);
+      color: var(--marrom);
+      padding: 8px 22px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .cat-btn:hover, .cat-btn.active {
+      background: var(--rosa);
+      color: white;
+      border-color: var(--rosa);
+    }
+
+    /* PRODUTOS */
+    .produtos-section {
+      padding: 40px 5%;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--marrom);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--cinza);
+      margin-bottom: 40px;
+      font-size: 0.95rem;
+    }
+
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .produto-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .produto-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(180,100,120,0.2);
+    }
+
+    .produto-img {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      position: relative;
+    }
+
+    .badge-novo {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--rosa-escuro);
+      color: white;
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    .produto-info {
+      padding: 20px;
+    }
+
+    .produto-marca {
+      font-size: 0.75rem;
+      color: var(--rosa-escuro);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .produto-nome {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .produto-desc {
+      font-size: 0.82rem;
+      color: var(--cinza);
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .produto-preco-area {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .produto-preco {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--marrom);
+    }
+
+    .produto-preco-old {
+      font-size: 0.82rem;
+      color: #aaa;
+      text-decoration: line-through;
+    }
+
+    .stars { color: #f4c430; font-size: 0.8rem; }
+
+    .btn-whatsapp {
+      width: 100%;
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 12px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe5d;
+      transform: scale(1.02);
+    }
+
+    /* BANNER PROMOÇÃO */
+    .banner-promo {
+      background: linear-gradient(135deg, var(--marrom), var(--rosa-escuro));
+      color: white;
+      text-align: center;
+      padding: 50px 5%;
+      margin: 20px 0;
+    }
+
+    .banner-promo h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .banner-promo p { opacity: 0.9; margin-bottom: 25px; }
+
+    .banner-btn {
+      background: white;
+      color: var(--marrom);
+      padding: 12px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .banner-btn:hover { transform: scale(1.05); }
+
+    /* DEPOIMENTOS */
+    .depoimentos {
+      padding: 60px 5%;
+      background: white;
+    }
+
+    .dep-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .dep-card {
+      background: var(--nude);
+      border-radius: 16px;
+      padding: 25px;
+      border-left: 4px solid var(--rosa);
+    }
+
+    .dep-texto { font-size: 0.9rem; color: #555; margin-bottom: 15px; font-style: italic; }
+
+    .dep-autor { font-weight: 600; color: var(--marrom); font-size: 0.9rem; }
+
+    /* CONTATO */
+    .contato {
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      padding: 60px 5%;
+      text-align: center;
+    }
+
+    .contato h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--marrom);
+      margin-bottom: 10px;
+    }
+
+    .contato p { color: #9b5d6e; margin-bottom: 25px; }
+
+    .btn-whatsapp-grande {
+      background: #25D366;
+      color: white;
+      padding: 16px 45px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 20px rgba(37,211,102,0.4);
+      transition: all 0.3s;
+    }
+
+    .btn-whatsapp-grande:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(37,211,102,0.5);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--marrom);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 25px 5%;
+      font-size: 0.85rem;
+    }
+
+    footer span { color: var(--rosa); }
+
+    /* RESPONSIVO */
+    @media (max-width: 600px) {
+      nav { display: none; }
+      .hero { padding: 60px 5% 50px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Glow <span>Beauty</span> ✨</div>
+  <nav>
+    <a href="#produtos">Produtos</a>
+    <a href="#depoimentos">Avaliações</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-emojis">💄💋🌸</div>
+  <h1>Realce a sua<br/>beleza natural</h1>
+  <p>Maquiagens de qualidade para cada ocasião. Encontre seu look perfeito!</p>
+  <a href="#produtos" class="hero-btn">Ver Produtos</a>
+</section>
+
+<!-- CATEGORIAS -->
+<div class="categorias">
+  <button class="cat-btn active">Todos</button>
+  <button class="cat-btn">Base & Pó</button>
+  <button class="cat-btn">Lábios</button>
+  <button class="cat-btn">Olhos</button>
+  <button class="cat-btn">Skincare</button>
+</div>
+
+<!-- PRODUTOS -->
+<section class="produtos-section" id="produtos">
+  <h2 class="section-title">Nossos Produtos</h2>
+  <p class="section-sub">Qualidade e beleza em cada detalhe 🌷</p>
+
+  <div class="produtos-grid">
+
+    <!-- Produto 1 -->
+    <div class="produto-card">
+      <div class="produto-img" style="background: linear-gradient(135deg,#fce4ec,#f8bbd0);">
+        💄
+        <span class="badge-novo">NOVO</span>
+      </div>
+      <div class="produto-info">
+        <div class="produto-marca">Batom</div>
+        <div class="produto-nome">Batom Matte Duradouro</div>
+        <div class="produto-desc">Fórmula ultra pigmentada, dura até 12h. Disponível em 15 cores.</div>
+        <div class="produto-preco-area">
+          <div>
+            <div class="produto-preco">R$ 39,90</div>
+            <div class="produto-preco-old">R$ 59,90</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20comprar%20o%20Batom%20Matte%20Duradouro%20💄" class="btn-whatsapp" target="_blank">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Comprar via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Produto 2 -->
+    <div class="produto-card">
+      <div class="produto-img" style="background: linear-gradient(135deg,#fff8e1,#ffecb3);">
+        🌟
+      </div>
+      <div class="produto-info">
+        <div class="produto-marca">Base</div>
+        <div class="produto-nome">Base Líquida HD</div>
+        <div class="produto-desc">Cobertura total com acabamento natural. Para todos os tipos de pele.</div>
+        <div class="produto-preco-area">
+          <div>
+            <div class="produto-preco">R$ 79,90</div>
+            <div class="produto-preco-old">R$ 99,90</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20comprar%20a%20Base%20Líquida%20HD%20🌟" class="btn-whatsapp" target="_blank">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Comprar via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Produto 3 -->
+    <div class="produto-card">
+      <div class="produto-img" style="background: linear-gradient(135deg,#e8f5e9,#c8e6c9);">
+        ✨
+        <span class="badge-novo">OFERTA</span>
+      </div>
+      <div class="produto-info">
+        <div class="produto-marca">Iluminador</div>
+        <div class="produto-nome">Iluminador Glow Perfeito</div>
+        <div class="produto-desc">Brilho intenso e duradouro para um look deslumbrante dia e noite.</div>
+        <div class="produto-preco-area">
+          <div>
+            <div class="produto-preco">R$ 49,90</div>
+            <div class="produto-preco-old">R$ 69,90</div>
+          </div>
+          <div class="stars">★★★★☆</div>
+        </div>
+        <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20comprar%20o%20Iluminador%20Glow%20✨" class="btn-whatsapp" target="_blank">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Comprar via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Produto 4 -->
+    <div class="produto-card">
+      <div class="produto-img" style="background: linear-gradient(135deg,#ede7f6,#d1c4e9);">
+        👁️
+      </div>
+      <div class="produto-info">
+        <div class="produto-marca">Olhos</div>
+        <div class="produto-nome">Paleta de Sombras Luxe</div>
+        <div class="produto-desc">12 cores incríveis, acabamento matte e shimmer. Perfeita para qualquer look.</div>
+        <div class="produto-preco-area">
+          <div>
+            <div class="produto-preco">R$ 89,90</div>
+            <div class="produto-preco-old">R$ 120,00</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20comprar%20a%20Paleta%20de%20Sombras%20Luxe%20👁️" class="btn-whatsapp" target="_blank">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Comprar via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Produto 5 -->
+    <div class="produto-card">
+      <div class="produto-img" style="background: linear-gradient(135deg,#fbe9e7,#ffccbc);">
+        🍑
+      </div>
+      <div class="produto-info">
+        <div class="produto-marca">Rosto</div>
+        <div class="produto-nome">Blush em Pó Pêssego</div>
+        <div class="produto-desc">Tom natural que realça as maçãs do rosto. Longa duração.</div>
+        <div class="produto-preco-area">
+          <div>
+            <div class="produto-preco">R$ 35,90</div>
+            <div class="produto-preco-old">R$ 49,90</div>
+          </div>
+          <div class="stars">★★★★☆</div>
+        </div>
+        <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20comprar%20o%20Blush%20Pêssego%20🍑" class="btn-whatsapp" target="_blank">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Comprar via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Produto 6 -->
+    <div class="produto-card">
+      <div class="produto-img" style="background: linear-gradient(135deg,#e3f2fd,#bbdefb);">
+        💧
+        <span class="badge-novo">TOP</span>
+      </div>
+      <div class="produto-info">
+        <div class="produto-marca">Skincare</div>
+        <div class="produto-nome">Primer Hidratante</div>
+        <div class="produto-desc">Prepara a pele e garante que a maquiagem dure muito mais.</div>
+        <div class="produto-preco-area">
+          <div>
+            <div class="produto-preco">R$ 59,90</div>
+            <div class="produto-preco-old">R$ 79,90</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20comprar%20o%20Primer%20Hidratante%20💧" class="btn-whatsapp" target="_blank">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Comprar via WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BANNER -->
+<div class="banner-promo">
+  <h2>🎁 Frete Grátis nas compras acima de R$ 150</h2>
+  <p>Aproveite nossas ofertas exclusivas e realce sua beleza com o melhor preço!</p>
+  <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20saber%20mais%20sobre%20as%20promoções!" class="banner-btn" target="_blank">Aproveitar Agora</a>
+</div>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos" id="depoimentos">
+  <h2 class="section-title">Clientes Felizes 💕</h2>
+  <p class="section-sub">Veja o que nossas clientes falam sobre nós</p>
+  <div class="dep-grid">
+    <div class="dep-card">
+      <div class="stars" style="margin-bottom:10px">★★★★★</div>
+      <p class="dep-texto">"Amei o batom! Ficou lindo e durou o dia todo. Super recomendo a Glow Beauty! 💄"</p>
+      <div class="dep-autor">— Ana Paula, SP</div>
+    </div>
+    <div class="dep-card">
+      <div class="stars" style="margin-bottom:10px">★★★★★</div>
+      <p class="dep-texto">"Atendimento pelo WhatsApp é maravilhoso, chegou rapidinho e a base é perfeita pra minha pele!"</p>
+      <div class="dep-autor">— Juliana M., RJ</div>
+    </div>
+    <div class="dep-card">
+      <div class="stars" style="margin-bottom:10px">★★★★★</div>
+      <p class="dep-texto">"A paleta de sombras é incrível! Já comprei 3 vezes, qualidade impecável e preço justo. 😍"</p>
+      <div class="dep-autor">— Fernanda L., BH</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <h2>Fale Conosco 💬</h2>
+  <p>Tire suas dúvidas, faça seu pedido ou peça indicações de produtos pelo WhatsApp!</p>
+  <a href="https://wa.me/5500000000000?text=Olá!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20produtos!" class="btn-whatsapp-grande" target="_blank">
+    <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Chamar no WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>Glow Beauty</span> — Todos os direitos reservados 💄 | Feito com amor ✨</p>
+</footer>
+
+</body>
+</html>
+</parameter>
